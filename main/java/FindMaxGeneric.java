@@ -2,10 +2,7 @@
 //https://deepeshdarshan.wordpress.com/2013/01/17/finding-max-value-using-java-generics/
 
 public class FindMaxGeneric<T extends Comparable<T>> {
-
-    private final T a ;T b;T c;T p;T q;T r;   
-    
-
+private final T a ;T b;T c;T p;T q;T r;   
     public FindMaxGeneric(T a, T b, T c,T p,T q,T r) {
         this.a =a;
         this.b = b;
@@ -15,13 +12,19 @@ public class FindMaxGeneric<T extends Comparable<T>> {
         this.r = r;
         
     }
-
-    public T findMaximum() {
+ public T findMaximum() {
         return FindMaxGeneric.findMaximum(a, b, c,p ,q ,r);
     }
 
-    //Single generic method to compare different types of data
-    public static <T extends Comparable> T findMaximum(T a, T b, T c,T p,T q,T r) {
+ public T findmaximum() {
+	 T findMax = FindMaxGeneric.findMaximum(a, b, c, p, q,r);
+     printMax(findMax);
+     return findMax;
+ }
+ public void printMax(T maximum) {
+     System.out.println("Maximum : " + maximum);
+ }
+ public static <T extends Comparable> T findMaximum(T a, T b, T c,T p,T q,T r) {
         T max = a;
         if (b.compareTo(max) > 0) {
             max = b;
