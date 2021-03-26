@@ -1,6 +1,14 @@
-public class FindMaxGeneric {
-    public static void  main(String args[]){
-        System.out.println("Welcome to the GENERICS CONCEPT");
-    }
+  //compareTo -- boolean
+//https://deepeshdarshan.wordpress.com/2013/01/17/finding-max-value-using-java-generics/
 
+public class FindMaxGeneric{
+	public <T extends Comparable>T findMaximum(T[] numberArray) {
+        T max = numberArray[0];
+        for (T element : numberArray) {
+           if (element.compareTo(max) > 0) {
+                max = element;
+            }
+        }
+        return max;
+    }
 }
