@@ -45,5 +45,29 @@ public class FindMaxGenericTest {
     	Float result=findMax.findMaximum(floatArray);
     	Assertions.assertEquals(floatArray[2], result);
     }
+  //finding max of strings    
+    @Test
+    public void whenGivenThreeStrings_AndFirstStringIsMax_ShouldReturn_true() {
+        String [] stringArray = {"Promogranate", "Gua", "Orange"};
+        String result = findMax.findMaximum(stringArray);
+        Assertions.assertEquals("Promogranate", result);
+    }
+    
+    @Test
+    public void whenGivenThreeStrings_AndSecondStringIsMax_ShouldReturn_true() {
+        String [] stringArray = { "Gua","Promogranate", "Orange"};
+        String result = findMax.findMaximum(stringArray);
+        Assertions.assertEquals("Promogranate", result);
+    }
+    
+    @Test
+    public void whenGivenThreeStrings_AndThirdStringIsMax_ShouldReturn_true() {
+        String [] stringArray = { "Gua", "Orange","Promogranate"};
+        String result = findMax.findMaximum(stringArray);
+        Assertions.assertEquals("Promogranate", result);
+    }
+
+
+
 
 }
